@@ -53,7 +53,7 @@
         }
 
         /**
-         * Creates a callback function in the AmazonAutocomplete globally exposed object that gets called when the 
+         * Creates a callback function in the 'AmazonAutocomplete' global object that gets called when the 
          * response from Amazon is received. This plugin leverages JSONP so that the response from Amazon is a JSON
          * object wrapped around a function whose name is passed in the 'callback' query string.
          * 
