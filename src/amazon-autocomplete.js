@@ -74,7 +74,7 @@
     //---------------------------------------------//
 
     /**
-     * Assigns a callback function that gets called when a word in the
+     * Assign a callback function that gets called when a word in the
      * ui widget is selected 
      * 
      * @param {function} cb - the callback function to be called 
@@ -84,7 +84,7 @@
     }
 
     /**
-     * Assigns a callback function that gets called when new words are received
+     * Assign a callback function that gets called when new words are received
      * from the Amazon autocompletion service
      * 
      * @param {function} cb - the callback function to be called 
