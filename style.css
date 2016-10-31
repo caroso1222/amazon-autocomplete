@@ -1,0 +1,24 @@
+.ac--inner{
+    background: #f0f0f0;
+}
+
+.ac--prefix{
+    font-weight: bold;
+}
+
+.ac--selected{
+    background-color: #d6d6d6;
+}
+
+.ac--word:hover{
+    background-color: #e6e6e6;
+}
+
+#amazon-search, #amazon-search-2{
+    width: 130px;
+}
+
+.search-wrapper-2{
+    right: 200px;
+    position: absolute;
+}
