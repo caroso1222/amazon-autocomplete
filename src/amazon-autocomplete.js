@@ -24,7 +24,8 @@
         //Default configuration
         self._config = {
             delay: 150,
-            showWords: true
+            showWords: true,
+            hideOnblur: true
         }
         let args = arguments[0];
         if (args && typeof args === 'string'){
@@ -52,6 +53,20 @@
             }
         }
 
+        //Add a class to the main container to ensure it hides when the user clicks outside the 
+        //search input or the words container
+        if(self._config.hideOnblur){
+            self._container.parentNode.classList.add('ac--hide-on-blur');
+        }
+
+
+        //Ensure the words container is shown when the search field is clicked
+        self._input.addEventListener('click', e => {
+            self._container.parentNode.style.display = 'block';
+            // Store a signal in the event to indicate, on upper levels, that this element was click
+            e.amazonAutocompleteClicked = true;
+        });
+
         /**
          * Creates a callback function in the 'AmazonAutocomplete' global object that gets called when the 
          * response from Amazon is received. This plugin leverages JSONP so that the response from Amazon is a JSON
@@ -68,6 +83,15 @@
             }
         }    
     }
+
+    /**
+     * Hide widget when clicked outside the search field or the words container 
+     */
+    document.body.addEventListener('click', evt => {
+        if(!evt.amazonAutocompleteClicked)
+            document.querySelectorAll('.ac--container.ac--hide-on-blur').forEach( elem => elem.style.display = 'none');
+        
+    });
 
     //---------------------------------------------//
     //--------------- PUBLIC METHODS --------------//
@@ -130,7 +154,7 @@
     /**
      * Bind a click listener to the words container then handle the click event on each word by leveraging
      * event bubbling.
-     * We bing the listener to the parent container because the words inside the ui widget gets replaced 'on each keyup event' 
+     * We bind the listener to the parent container because the words inside the ui widget gets replaced 'on each keyup event' 
      * (remember it's debounced though) so it's inefficient to bind a click listener to each element. 
      */
     function _bindClickListener() {
