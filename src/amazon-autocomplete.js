@@ -56,7 +56,7 @@
         //Add a class to the main container to ensure it hides when the user clicks outside the 
         //search input or the words container
         if(self._config.hideOnblur){
-            self._container.parentNode.classList.add('ac--hide-on-blur');
+            self._container.parentNode.classList.add('ac__container--hide-on-blur');
         }
 
 
@@ -89,7 +89,7 @@
      */
     document.body.addEventListener('click', evt => {
         if(!evt.amazonAutocompleteClicked)
-            document.querySelectorAll('.ac--container.ac--hide-on-blur').forEach( elem => elem.style.display = 'none');
+            document.querySelectorAll('.ac__container--hide-on-blur').forEach( elem => elem.style.display = 'none');
         
     });
 
@@ -127,12 +127,12 @@
      */
     function _buildWordsContainer() {
         let container = document.createElement('div');
-        container.className = 'ac--container';
+        container.className = 'ac__container';
         container.style.width = this._input.offsetWidth;
         container.style.position = 'relative';
         this._input.parentNode.insertBefore(container, this._input.nextSibling);
         let inner = document.createElement('div');
-        inner.className = 'ac--inner';
+        inner.className = 'ac__inner';
         inner.style.position = 'absolute';
         inner.style.top = 0;
         inner.style.left = 0;
@@ -195,13 +195,13 @@
     }
 
     /**
-     * Remove the 'ac--selected' class from the desired element. Used when navigating through the ui widget.
+     * Remove the 'ac__word--selected' class from the desired element. Used when navigating through the ui widget.
      * 
      * @param {DOM Node} wordElement - The DOM Node containing the word that must be unselected (meaning it lost focus)
      */
     function _unselectWord(wordElement) {
         if (wordElement != null)
-            wordElement.className = wordElement.className.split(' ').filter(obj => !/ac--selected/.test(obj)).join(' ');
+            wordElement.className = wordElement.className.split(' ').filter(obj => !/ac__word--selected/.test(obj)).join(' ');
     }
 
     /**
@@ -237,13 +237,13 @@
                 _unselectWord(self._words[self._idx]);
                 self._idx--;
             }
-            self._words[self._idx].className += ' ac--selected';
+            self._words[self._idx].className += ' ac__word--selected';
         } else if (key == 40) {
             if (self._idx < self._words.length - 1) {
                 _unselectWord(self._words[self._idx]);
                 self._idx++;
             }
-            self._words[self._idx].className += ' ac--selected';
+            self._words[self._idx].className += ' ac__word--selected';
         } else if (key == 13) {
             if (self._words.length && self._idx > -1)
                 self._onSelectedCB(_getStringFromWordElement(self._words[self._idx]));
@@ -263,10 +263,10 @@
      * Create the script tag needed to fetch the suggestions and append it to the DOM
      */
     function _buildScriptContainer(){
-        let parent = document.getElementById('ac--script');
+        let parent = document.getElementById('ac__script');
         if (parent == null){
             parent = document.createElement('div');
-            parent.id = 'ac--script';
+            parent.id = 'ac__script';
             parent.appendChild(document.createElement('script'));
             document.body.appendChild(parent);
         }
@@ -284,10 +284,10 @@
         let docFrag = document.createDocumentFragment();
         for (let i = 0; i < words.length; i++){
             let wordElement = document.createElement('p');
-            wordElement.className = 'ac--word';
+            wordElement.className = 'ac__word';
             wordElement.style.cursor = 'pointer';
             let prefixElement = document.createElement('span');
-            prefixElement.className = 'ac--prefix';
+            prefixElement.className = 'ac__prefix';
             prefixElement.style.pointerEvents = 'none';
             let suffix = document.createTextNode(words[i].slice(prefix.length));
             prefixElement.appendChild(document.createTextNode(prefix));
@@ -306,7 +306,7 @@
      * @param {string} prefix - The letters written by the user in the html search input
      */
     function _getSuggestions(prefix) {
-        let scriptContainer = document.getElementById('ac--script');
+        let scriptContainer = document.getElementById('ac__script');
         let newScript = document.createElement('script');
         newScript.src = 'http://completion.amazon.com/search/complete?search-alias=aps&client=amazon-search-ui&mkt=1&q='+prefix+'&callback=AmazonAutocomplete.AmazonJSONPCallbackHandler_'+this._id;
         scriptContainer.replaceChild(newScript, scriptContainer.firstChild);
