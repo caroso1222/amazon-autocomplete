@@ -1,17 +1,33 @@
 {
   "name": "amazon-autocomplete",
   "version": "1.0.0",
-  "description": "A vanilla JavaScript plugin to show amazon product suggestions as you write in a textbox",
-  "main": "index.js",
+  "description": "A vanilla JavaScript plugin to unlock the full power of the Amazon autocompletion engine right into your search input.",
+  "keywords": [
+    "amazon",
+    "autocomplete",
+    "autocompletion",
+    "textfield",
+    "suggestions"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel --presets es2015 src/amazon-autocomplete.js --out-file _es5/amazon-autocomplete.js"
   },
+  "bugs": {
+    "url": "https://github.com/caroso1222/amazon-autocomplete/issues"
+  },
   "author": "Carlos Roso",
   "license": "MIT",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "del": "^2.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-rename": "^1.2.2",
     "babel-cli": "^6.18.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babili": "0.0.7"
+    "babel-preset-es2015": "^6.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caroso1222/amazon-autocomplete.git"
   }
 }

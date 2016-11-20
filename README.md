@@ -1,6 +1,7 @@
 #Amazon Autocomplete JS Plugin
 AmazonAutocomplete is a vanilla JavaScript plugin to unlock the full power of the Amazon autocompletion engine right into your search input. 
 
+**Demo**: [http://carlosroso.com/amazon-autocomplete](http://carlosroso.com/amazon-autocomplete)
 
 ##Installation
 You can just grab the minified file from `/dist` or unminified from `/src` but I highly recommend installation through npm. 
