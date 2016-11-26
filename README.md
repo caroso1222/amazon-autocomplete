@@ -33,7 +33,7 @@ Now add it to your html file:
 Create a text input in your html file for the search field.
 
 ```html
-<input type=“text” id=“search-input”/> 
+<input type="text" id="search-input"/> 
 ```
 
 Edit your main JavaScript file to create an AmazonAutocomplete instance with your search field CSS selector.
