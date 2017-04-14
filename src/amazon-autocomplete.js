@@ -251,7 +251,7 @@
                 self._onSelectedCB(self._input.value);
         } else if (/[a-zA-Z0-9-_ ]/.test(char) || key === 8) {
             self._idx = -1;
-            let prefix = self._input.value;
+            let prefix = self._input.value.replace("&","%26");
             if (prefix != '')
                 self._keyListenerDebounced(prefix);
             else
