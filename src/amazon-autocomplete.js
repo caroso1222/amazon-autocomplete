@@ -308,7 +308,7 @@
     function _getSuggestions(prefix) {
         let scriptContainer = document.getElementById('ac__script');
         let newScript = document.createElement('script');
-        newScript.src = 'http://completion.amazon.com/search/complete?search-alias=aps&client=amazon-search-ui&mkt=1&q='+prefix+'&callback=AmazonAutocomplete.AmazonJSONPCallbackHandler_'+this._id;
+        newScript.src = 'https://completion.amazon.com/search/complete?search-alias=aps&client=amazon-search-ui&mkt=1&q='+prefix+'&callback=AmazonAutocomplete.AmazonJSONPCallbackHandler_'+this._id;
         scriptContainer.replaceChild(newScript, scriptContainer.firstChild);
     }
 
