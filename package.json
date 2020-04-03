@@ -21,6 +21,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "del": "^2.2.2",
+    "uglify-js": "^3.8.1",
     "gulp-uglify": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "babel-cli": "^6.18.0",
@@ -29,8 +30,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/caroso1222/amazon-autocomplete.git"
-  },
-  "dependencies": {
-    "uglify-js": "^3.8.1"
   }
 }
