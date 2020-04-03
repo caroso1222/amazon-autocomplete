@@ -1,9 +1,20 @@
 # Amazon Autocomplete JS Plugin
+[![npm version](https://badge.fury.io/js/amazon-autocomplete.svg)](https://badge.fury.io/js/amazon-autocomplete)
+[![size](https://img.shields.io/bundlephobia/minzip/amazon-autocomplete.svg?color=54CA2F&style=popout)](https://npmjs.org/amazon-autocomplete)
+
 AmazonAutocomplete is a vanilla JavaScript plugin to unlock the full power of the Amazon autocompletion engine right into your search input. 
 
 **Demo**: [http://carlosroso.com/amazon-autocomplete](http://carlosroso.com/amazon-autocomplete)
 
 ![demo gif](http://i.imgur.com/4whMwjM.gif)
+
+## Features
+
+- 🐣 Tiny footprint (<3K gzipped)
+- 🔥 Support on all major browsers and +IE10
+- 👓 Library agnostic
+- ⚡️ Data fecthed over JSONP
+- ✨ Perf optimized. Debounce events and fetch only when necessary. 
 
 ## Installation
 You can grab the minified file from `/dist` or unminified from `/src` but I highly recommend installation through npm. 
