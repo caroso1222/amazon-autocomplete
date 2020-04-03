@@ -1,6 +1,6 @@
 {
   "name": "amazon-autocomplete",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A vanilla JavaScript plugin to unlock the full power of the Amazon autocompletion engine right into your search input.",
   "keywords": [
     "amazon",
