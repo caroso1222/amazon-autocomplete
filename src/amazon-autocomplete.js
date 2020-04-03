@@ -88,11 +88,10 @@
      * Hide widget when clicked outside the search field or the words container 
      */
     document.body.addEventListener('click', evt => {
-        if(!evt.amazonAutocompleteClicked){
-            NodeList.prototype.forEach = Array.prototype.forEach; 
-            HTMLCollection.prototype.forEach = Array.prototype.forEach; // Because of https://bugzilla.mozilla.org/show_bug.cgi?id=14869
-        
-            document.querySelectorAll('.ac__container--hide-on-blur').forEach( elem => elem.style.display = 'none');
+        if(!evt.amazonAutocompleteClicked) {
+          let elems = document.querySelectorAll('.ac__container--hide-on-blur');
+          var elemsArr = Array.prototype.slice.call(elems);
+          elemsArr.forEach(elem => elem.style.display = 'none');
         }
     });
 

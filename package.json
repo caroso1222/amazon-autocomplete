@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel --presets es2015 src/amazon-autocomplete.js --out-file _es5/amazon-autocomplete.js"
+    "build": "babel --presets es2015 src/amazon-autocomplete.js --out-file _es5/amazon-autocomplete.js && uglifyjs _es5/amazon-autocomplete.js --output dist/amazon-autocomplete.min.js"
   },
   "bugs": {
     "url": "https://github.com/caroso1222/amazon-autocomplete/issues"
@@ -29,5 +29,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/caroso1222/amazon-autocomplete.git"
+  },
+  "dependencies": {
+    "uglify-js": "^3.8.1"
   }
 }
