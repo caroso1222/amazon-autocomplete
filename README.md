@@ -6,13 +6,13 @@ AmazonAutocomplete is a vanilla JavaScript plugin to unlock the full power of th
 ![demo gif](http://i.imgur.com/4whMwjM.gif)
 
 ## Installation
-You can just grab the minified file from `/dist` or unminified from `/src` but I highly recommend installation through npm. 
+You can grab the minified file from `/dist` or unminified from `/src` but I highly recommend installation through npm. 
 
 ```
 npm install --save amazon-autocomplete
 ```
 
-If you think npm is just so 2015 or just feeling hipster, you can install it using [yarn](https://yarnpkg.com/) as well:
+Or you can install it using [yarn](https://yarnpkg.com/) as well:
 
 ```
 yarn add amazon-autocomplete
