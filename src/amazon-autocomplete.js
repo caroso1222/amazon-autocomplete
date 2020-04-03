@@ -216,7 +216,7 @@
         if (key == 13) {
             this._onSelectedCB(this._input.value);
         }else if (/[a-zA-Z0-9-_ ]/.test(char) || key === 8){
-            let prefix = this._input.value;
+            let prefix = encodeURIComponent(this._input.value);
             if (prefix != '')
                 this._keyListenerDebounced(prefix);
         }
@@ -251,7 +251,7 @@
                 self._onSelectedCB(self._input.value);
         } else if (/[a-zA-Z0-9-_ ]/.test(char) || key === 8) {
             self._idx = -1;
-            let prefix = self._input.value;
+            let prefix = encodeURIComponent(self._input.value);
             if (prefix != '')
                 self._keyListenerDebounced(prefix);
             else
