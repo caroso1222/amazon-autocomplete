@@ -13,7 +13,7 @@ AmazonAutocomplete is a vanilla JavaScript plugin to unlock the full power of th
 - 🐣 Tiny footprint (<3K gzipped)
 - 🔥 Support on all major browsers and +IE10
 - 👓 Library agnostic
-- ⚡️ Data fecthed over JSONP
+- ⚡️ Data fetched over JSONP
 - ✨ Perf optimized. Debounce events and fetch only when necessary. 
 
 ## Installation
